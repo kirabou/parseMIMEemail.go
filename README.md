@@ -1,7 +1,7 @@
 # How to parse a MIME email in Golang
 
 ## Introduction
-I wanted to learn how to parse a MIME email using Go. As an exercice, I decided to write a simple tool that would read a MIME email from `stdio` and write all its MIME parts into separated files, based on the type of each part. Then I wanted to consolidate my learnings into this simple paper. 
+I wanted to learn how to parse a MIME email using Go. As an exercice, I decided to write a simple tool that would read a MIME email from `stdin` and write all its MIME parts into separated files, based on the type of each part. Then I wanted to consolidate my learnings into this simple paper. 
 
 ## Separating the header and the body of the message
 First thing first, the header and the body of the message have to be separated from the email. Golang provides the `net/mail` package and its `mail.ReadMessage()` function for this. `ReadMessage()` returns a `Message` structure which has the two fields we are looking for: a Header and a Body. 
