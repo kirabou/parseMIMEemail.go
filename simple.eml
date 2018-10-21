@@ -1,0 +1,17 @@
+Subject: test html mail
+From: sender@example.com
+To: recipient@example.com
+Content-Type: multipart/alternative; boundary=bcaec520ea5d6918e204a8cea3b4
+
+--bcaec520ea5d6918e204a8cea3b4
+Content-Type: text/plain; charset=ISO-8859-1
+
+*hi!*
+
+--bcaec520ea5d6918e204a8cea3b4
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<p><b>hi!</b></p>
+
+--bcaec520ea5d6918e204a8cea3b4--
