@@ -41,7 +41,7 @@ The most common MIME formats for a message body are:
 - `multipart/alternative`: when the same content is provided into different formats, most of the time text and HTML, to allow display on various devices, each MIME part holds one the provided format.
 
 ## A MIME email example
-Below is an example of a very basic MIME email message, where the same content (`multipart/alternative`) is provided in different formats (`text/plain` and `text/html`) through two different MIME parts, each MIME part being separated by the `bcaec520ea5d6918e204a8cea3b4` boundary (example taken from [Send Html page As Email using "mutt"](https://stackoverflow.com/questions/6805783/send-html-page-as-email-using-mutt)).
+Below is an example of a very basic MIME email message, where the same content (`multipart/alternative`) is provided in different formats (`text/plain` and `text/html`) through two different MIME parts, each MIME part being separated by the `bcaec520ea5d6918e204a8cea3b4` boundary (example taken from [Send Html page As Email using "mutt"](https://stackoverflow.com/questions/6805783/send-html-page-as-email-using-mutt)).
 
 ```
 Subject: test html mail
@@ -302,7 +302,7 @@ switch {
 	}	
 ```
 
-##Bonus - reading RFC 2047 headers
+## Bonus - reading RFC 2047 headers
 Despite being limited to 7 bits ASCII characters, it is possible to have special characters in the headers of a message thanks to RFC 2047. For example, to allow a message subject like "Subject: ¡Hola, señor!", the Subject field of the message header has to be encoded using RFC 2047 like this: `Subject: =?iso-8859-1?Q?=A1Hola,_se=F1or!?=`. The `Subject`, `To` and `From` fields of the header are the most often encoded using RFC 2047. 
 
 Fortunately, with the `mime` package and its `WordDecoder.HeaderDecode()` function there is no point in trying to understand how RFC 2047 works. All is needed is to create a new decoder for RFC encoded data with `new(mime.WordDecoder)` then use the `HeaderDecode()` method. It is how I implemented the display of the main header fields of the message:
